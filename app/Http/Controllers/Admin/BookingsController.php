@@ -49,8 +49,8 @@ class BookingsController extends Controller
             return abort(401);
         }
 
-        $users = User::get()->pluck('full_name', 'id')->prepend(trans('Please Select'), '');
-        $rooms = Room::get()->pluck('room_number', 'id')->prepend(trans('Please Select'), '');
+        $users = User::get()->pluck('name', 'id')->prepend(trans('Please Select'), '');
+        $rooms = Room::get()->pluck('id', 'id')->prepend(trans('Please Select'), '');
 
         return view('admin.bookings.create', compact('users', 'rooms'));
     }
