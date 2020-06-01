@@ -14,7 +14,7 @@ class Create1516728105RoomsTable extends Migration
     {
         if(! Schema::hasTable('rooms')) {
             Schema::create('rooms', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
 
             $table->string('room_number');
             $table->boolean('clean')->default(true);
