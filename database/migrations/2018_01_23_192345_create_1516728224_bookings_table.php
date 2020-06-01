@@ -23,6 +23,7 @@ class Create1516728224BookingsTable extends Migration
                 $table->string('payment_method')->nullable();
                 $table->double('price');
                 $table->string('state')->default('pending');
+                $table->string('room_number')->nullable();
                 
                 $table->timestamps();
 
