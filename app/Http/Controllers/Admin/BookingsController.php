@@ -123,9 +123,8 @@ class BookingsController extends Controller
         if (auth()->user()->role_id <= 1) {
             return abort(401);
         }
-
-        $users = User::get()->pluck('name', 'id')->prepend(trans('quickadmin.qa_please_select'), '');
-        $rooms = Room::get()->pluck('room_number', 'id')->prepend(trans('quickadmin.qa_please_select'), '');
+        $users = User::get()->pluck('name', 'id')->prepend(trans('Please Select'), '');
+        $rooms = Room::get()->pluck('id', 'id')->prepend(trans('Please Select'), '');
 
         $booking = Booking::findOrFail($id);
 
