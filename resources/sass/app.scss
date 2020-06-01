@@ -1,0 +1,21 @@
+// app.scss
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Importeer alle scss bestanden
+@import 'fonts';
+@import 'variables';   
+@import 'nav';                                             
+@import 'main';       
+@import 'rooms';       
+@import 'buttons';          
+@import 'auth';           
+@import 'footer';   
+@import 'user_panel';          
+@import 'bookings';          
+@import 'profile';          
+@import 'admin';          

@@ -1,0 +1,255 @@
+// _user_panel.scss
+
+.section-1 {
+    width: 100%;
+    height: 400px;
+    background-image: url('/storage/images/bg.jpg');
+    background-size: 100%;
+    background-position: middle;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .05),
+        2px 2px 5px rgba(0, 0, 0, .1);
+    float: left;
+
+    h1 {
+        font-family: "Lato",
+        sans-serif;
+    }
+
+    .wrapper {
+        width: 100%;
+        height: 100%;
+        background: rgb(219, 57, 57);
+        background: linear-gradient(120deg, rgba(219, 57, 57, 1) 0%, rgba(171, 24, 24, 0.8188317563353467) 50%, rgba(171, 24, 24, 0.8188317563353467) 64%, rgba(171, 24, 24, 1) 100%);
+        color: #fff;
+
+        .container {
+            padding-top: 20px;
+            padding-right: 335px;
+
+            .img {
+                position: relative;
+                margin: 20px 0px;
+                padding: 0px 15px 0px 0px;
+
+                img {
+                    width: 100px;
+                    border-radius: 12px;
+                    float: left;
+                    overflow: hidden;
+                    margin-right: 25px;
+                }
+
+                .name {
+                    font-weight: bold;
+                    font-size: 23px;
+                    margin-top: 3px;
+                }
+
+                .email {
+                    font-weight: bold;
+                    font-size: 20px;
+                    color: #aab8c2;
+                    margin-bottom: 9px;
+
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+
+.side-section {
+    float: right;
+    width: 300px;
+    margin-top: -370px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .05),
+        2px 2px 5px rgba(0, 0, 0, .1);
+    border-radius: 5px;
+
+
+    h2 {
+        color: $main-red;
+        font-weight: bold;
+        margin: 15px 0px;
+        text-align: center;
+        font-family: "Lato",
+            sans-serif;
+    }
+
+    .room {
+        // display: flex;
+        align-items: center;
+        height: 183px;
+
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: 2px;
+        transform: translateZ(0);
+        text-decoration: none;
+        background-color: white;
+
+
+        img {
+            width: 100%;
+        }
+
+        .room-wrapper {
+            height: 183px;
+            padding: 24px 8px;
+            overflow: hidden;
+            position: relative;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            align-items: center;
+            font-family: 'Lato',
+                sans-serif;
+            margin-top: -4px;
+            border: 2px solid $main-red;
+            margin-top: -60px;
+            transform: scale(0.9);
+            background-color: $sec-white;
+
+            .discount-triangle {
+                &:before {
+                    content: "";
+                    display: block;
+                    margin-top: 20px;
+                    margin-right: 0;
+                    height: 114px;
+                    width: 114px;
+                    background-color: #db3939;
+                    position: absolute;
+                    right: -65px;
+                    top: -77px;
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+            }
+
+            .discount-percentage-container {
+                position: absolute;
+                color: #fff;
+                top: 65px;
+                right: 5px;
+                display: -webkit-box;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                flex-direction: column;
+                margin-top: inherit;
+
+                .discount-percentage {
+                    font-size: 20px;
+                    text-align: left;
+                    line-height: 20px;
+                }
+
+                .discount-percentage-off {
+                    font-size: 16px;
+                    margin-top: -2px;
+                    text-align: right;
+                    line-height: 20px;
+                }
+            }
+
+
+
+            .rating-container {
+                .fa-star {
+                    color: #FEC200;
+                }
+            }
+
+            .location-container {
+                color: #2a2e3b;
+                text-align: center;
+                display: block;
+                width: 100%;
+                padding-top: 4px;
+
+                .rating-text {
+                    font-size: 14px;
+                    line-height: 18px;
+                    font-weight: 400;
+                }
+
+                .location {
+                    color: #db3939;
+                    display: block;
+                    white-space: nowrap;
+                    max-width: 80%;
+                    margin: auto auto 12px;
+                    -webkit-box-flex: 1;
+                    flex: 1;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            .price-container {
+                display: flex;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                flex-direction: row;
+                -webkit-box-align: center;
+                align-items: center;
+                text-align: center;
+                margin: 0 auto;
+
+                .old-price {
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #a1a8b6;
+                    text-decoration: line-through;
+                }
+
+                .price {
+                    margin: 0 8px;
+                    font-size: 56px;
+                    line-height: 56px;
+                    font-weight: 700;
+                    color: #db3939;
+
+                    sup {
+                        font-size: 36px;
+                        top: -.45em;
+                    }
+                }
+
+                .time {
+                    color: #2a2e3b;
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) { 
+    .side-section {
+        display: none;
+    }
+
+    .section-1 .wrapper .container {
+        padding-right: 0px;
+        h1 {
+            text-align: center;
+        }
+
+    }
+}

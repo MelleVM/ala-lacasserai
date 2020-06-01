@@ -1,0 +1,58 @@
+{{-- admin/bookings/edit.blade.php --}}
+
+{{-- gebruikt 'admin' layout --}}
+@extends('layouts.admin')
+
+{{-- content sectie --}}
+@section('content')
+
+    <div class="container-admin">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Edit <b>Booking</b></h2>
+                </div>
+            </div>
+        </div>
+
+        {!! Form::model($booking, ['method' => 'PUT', 'route' => ['admin.bookings.update', $booking->id]]) !!}
+        <div class="form-group">
+            <label>Time From</label>
+            <input value="2012-06-15 14:45" type="text" name="time_from" class="form-control" placeholder="DD-MM-YYYY">
+        </div>
+        <div class="form-group datetimepicker">
+            <label>Time To</label>
+            <input value="2012-06-15 14:45" type="text" name="time_to" class="form-control" placeholder="DD-MM-YYYY">
+        </div>
+                <div class="form-group">
+                    {!! Form::label('room_id', trans('Room ID').'', ['class' => 'control-label']) !!}
+                    {!! Form::select('room_id', $rooms, old('room_id'), ['class' => 'form-control select2']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('user_id', trans('User ID').'', ['class' => 'control-label']) !!}
+                    {!! Form::select('user_id', $users, old('user_id'), ['class' => 'form-control select2']) !!}
+                </div>
+        <div class="form-group">
+            <label>Additional Information</label>
+            <textarea placeholder="Additional Information" name="additional_information" class="w-100 p-2" rows="8">{{$booking->additional_information}}</textarea>
+        </div>
+        {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
+        {!! Form::close() !!}﻿
+    </div>
+</div>
+@stop
+
+{{-- extra javascript sectie --}}
+@section('javascript')
+    @parent
+    <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script>
+        $('.datetimepicker').datetimepicker({
+            format: "YYYY-MM-DD HH:mm"
+        });
+    </script>
+@stop

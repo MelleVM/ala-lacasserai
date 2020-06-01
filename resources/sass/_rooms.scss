@@ -1,0 +1,706 @@
+// _rooms.scss
+
+.top-filter {
+    width: calc(100% - 285px);
+    height: 50px;
+    float: left;
+    position: relative;
+    margin-top: 25px;
+    margin-left: 10px;
+
+    .top-filter-child {
+        height: 50px;
+        float: left;
+
+            // custom select 
+            select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                -ms-appearance: none;
+                appearance: none;
+                outline: 0;
+                box-shadow: none;
+                border: 0;
+                background: $main-red;
+                background-image: none;
+                font-size: 18px;
+            }
+
+            select::-ms-expand {
+                display: none;
+            }
+
+            .select {
+                position: relative;
+                display: flex;
+                width: 100%;
+                height: 100%;
+                line-height: 3;
+                background: $main-red;
+                overflow: hidden;
+                border-radius: .25em;
+            }
+
+            select {
+                flex: 1;
+                padding: 0 .5em;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            .select::after {
+                content: '\25BC';
+                position: absolute;
+                top: -2px;
+                right: 0;
+                padding: 0 1em;
+                background: rgb(173, 6, 6);
+                color: white;
+                cursor: pointer;
+                pointer-events: none;
+                -webkit-transition: .25s all ease;
+                -o-transition: .25s all ease;
+                transition: .25s all ease;
+            }
+
+    }
+
+    .sort {
+        width: 30%;
+        padding: 5px 20px 5px 0px;
+    }
+
+    .order {
+        width: 30%;
+        padding: 5px 20px 5px 5px;
+
+    }
+
+    .search {
+        width: 40%;
+        padding: 5px 0px 5px 5px;
+
+        input {
+            width: 80%;
+            height: 100%;
+            border-radius: 20px 0px 0px 20px;
+            border: 1px solid lightgray;
+            padding-left: 20px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 20%;
+            height: 100%;
+            float: right;
+            background-color: $main-red;
+            border: $main-red;
+            color: white;
+        }
+    }
+}
+
+.room-wrapper-show {
+    margin-top: 35px;
+    float: left;
+    position: relative;
+    width: 100%;
+
+    .img-wrapper {
+        max-width: 785px;
+        position: relative;
+        float: left;
+
+        .stars {
+            position: absolute;
+            top: -20px;
+            height: 40px;
+            width: 180px;
+            margin: auto;
+            left: 0;
+            right: 0;
+            background-color: black;
+            text-align:  center;
+            padding-top: 8px;
+            border-radius: 50px;
+            border: 2px solid $main-red;
+
+            svg {
+                color: $main-red;
+            }
+        }
+
+        .img {
+            border-radius: 2px;
+            border: 0.5px solid #c9cfcf;
+            float: left;
+        }
+
+        .img-big {
+            height: 305px;
+            margin-bottom: 5px;
+        }
+
+        .img-small {
+            height: 150px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+        }
+    }
+
+    .room-booking {
+        border: 1px solid #d4d4d4;
+        background-color: #f8f8f8;
+        border-radius: 1px;
+        z-index: 4;
+        width: 385px;
+        float: left;
+        padding: 20px;
+        text-align: center;
+        font-family: 'Lato',
+            sans-serif;
+
+
+
+        .booking-price-container {
+            background-color: rgb(228, 228, 228);
+            height: 200px;
+            width: 100%;
+            border-radius: 5px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+            .price-container {
+                display: flex;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                flex-direction: row;
+                -webkit-box-align: center;
+                align-items: center;
+                text-align: center;
+                margin: 0 auto;
+
+                .old-price {
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #a1a8b6;
+                    text-decoration: line-through;
+                }
+
+                .price {
+                    margin: 0 8px;
+                    font-size: 56px;
+                    line-height: 56px;
+                    font-weight: 700;
+                    color: #db3939;
+
+                    sup {
+                        font-size: 36px;
+                        top: -.45em;
+                    }
+                }
+
+                .time {
+                    color: #2a2e3b;
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+            }
+
+            .room-discount {
+                padding: 3px 7px;
+                background-color: $main-red;
+                color: white;
+                position: absolute;
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: -12px;
+                width: 100px;
+            }
+
+        }
+
+        .btn-square-red {
+            margin-top: 15px;
+
+        }
+    }
+}
+
+.room-show-left-container {
+    max-width: 775px;
+    position: relative;
+    float: left;
+    width: 100%;
+
+    .room-amenities {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        background-color: rgb(233, 233, 233);
+        padding: 30px 0px;
+
+        .amenity {
+            margin: 15px 15px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .free-wifi {
+            padding-left: 45px;
+            position: relative;
+
+            svg {
+                position: absolute;
+                left: 0;
+                top: 3px;
+                font-size: 25px;
+                color: $main-red;
+            }
+        }
+
+        .free-roomservice {
+            padding-left: 45px;
+            position: relative;
+
+            svg {
+                position: absolute;
+                left: 3px;
+                top: 5px;
+                font-size: 25px;
+                color: $main-red;
+            }
+        }
+
+        .discounted-price {
+            padding-left: 45px;
+            position: relative;
+
+            svg {
+                position: absolute;
+                left: 3px;
+                top: 5px;
+                font-size: 25px;
+                color: $main-red;
+            }
+
+            .bold {
+                color: $main-red;
+            }
+        }
+
+
+    }
+
+    .room-details {
+        width: 100%;
+        background-color: rgba(236, 104, 104, 0.3);
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border: 2px solid $main-red;
+        padding: 25px;
+
+        h2 {
+            padding-bottom: 10px;
+            font-weight: bold;
+        }
+
+        h4 {
+            line-height: 20px;
+            word-wrap: normal;
+            text-align: justify;
+        }
+    } 
+
+    hr {
+        margin: 30px 0px;
+        border-top: 1px solid #d4d4d4;
+    }
+}
+
+.custom-input {
+    width: 49%;
+    border-radius: 3px;
+    padding: 5px;
+    margin-top: 8px;
+    border: 1px solid rgb(179, 179, 179);
+}
+
+
+
+
+
+
+
+
+
+.modal-page-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.24);
+    display: none;
+    z-index: 4;
+}
+
+.container-payment-modal {
+    display: block;
+    max-width: 480px;
+    min-width: 300px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 25%;
+    position: fixed;
+    padding: 0 40px;
+    display: none;
+    z-index: 6;
+
+}
+
+.modal {
+    background: #fff;
+    -webkit-border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 3px;
+    -moz-background-clip: padding;
+    border-radius: 3px;
+    background-clip: padding-box;
+    overflow: hidden;
+}
+
+.modal .form .form-row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin: 0 0 30px;
+}
+
+.modal .form .form-row:last-child {
+    margin: 0;
+}
+
+.modal .form .form-row:last-child .input-group {
+    width: 75%;
+    margin: 0 15px 0 0;
+}
+
+.modal .form .form-row:last-child .input-group:last-child {
+    width: 25%;
+    margin: 0 0 0 15px;
+}
+
+.modal .form .input-group {
+    width: 100%;
+}
+
+.modal .form label {
+    display: block;
+    width: 100%;
+    margin: 0 0 10px;
+    color: black;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.modal .form input {
+    outline: none;
+    display: block;
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 0;
+    border: 0;
+    -webkit-border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 3px;
+    -moz-background-clip: padding;
+    border-radius: 3px;
+    background-clip: padding-box;
+    padding: 15px;
+    color: #999;
+    font-size: 12px;
+    font-weight: 700;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.modal .header {
+    background: $main-red;
+    padding: 30px;
+    text-align: center;
+}
+
+.modal .header h1 {
+    margin: 0 0 15px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.modal .header .card-type {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.modal .header .card-type .card {
+    position: relative;
+    width: 25%;
+    min-width: 54px;
+    text-align: center;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.modal .header .card-type .card.active {
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+.modal .header .card-type .card.active:after {
+    display: block;
+    bottom: -30px;
+}
+
+.modal .header .card-type .card:after {
+    content: "";
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    margin: 0 0 0 -10px;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+
+.modal .header .card-type .card img {
+    display: inline-block;
+}
+
+.modal .header .card-type li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.modal .content {
+    padding: 30px;
+}
+
+.modal .footer .button {
+    outline: none;
+    display: block;
+    background: #e39c14;
+    width: 100%;
+    border: 0;
+    padding: 20px 30px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.info {
+    width: 300px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.info h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 400;
+    color: #333;
+}
+
+.info span {
+    color: #666;
+    font-size: 12px;
+}
+
+.info span a {
+    color: #000;
+    text-decoration: none;
+}
+
+.info span .fa {
+    color: #00a6ea;
+}
+
+lesshat-selector {
+    -lh-property: 0;
+}
+
+@-webkit-keyframes active {
+    0% {
+        bottom: -60px;
+        opacity: 0;
+    }
+
+    100% {
+        bottom: -30px;
+        opacity: 1
+    }
+}
+
+@-moz-keyframes active {
+    0% {
+        bottom: -60px;
+        opacity: 0;
+    }
+
+    100% {
+        bottom: -30px;
+        opacity: 1
+    }
+}
+
+@-o-keyframes active {
+    0% {
+        bottom: -60px;
+        opacity: 0;
+    }
+
+    100% {
+        bottom: -30px;
+        opacity: 1
+    }
+}
+
+@keyframes active {
+    0% {
+        bottom: -60px;
+        opacity: 0;
+    }
+
+    100% {
+        bottom: -30px;
+        opacity: 1
+    }
+}
+
+[not-existing] {
+    zoom: 1;
+}
+
+
+// dit gebeurt alleen als het scherm minder dan 1100px breed is
+@media only screen and (max-width: 1100px) {
+
+    .room-wrapper-show .img-wrapper {
+        max-width: 100%;
+        width: 100%;
+
+        .img-big {
+            height: auto;
+            width: 100%;
+        }
+
+        .img-small {
+            display: none;
+        }
+    }
+
+    .room-show-left-container {
+        max-width: 100%;
+    }
+
+    .room-amenities {
+        width: 100%;
+    }
+
+    .room-details {
+        width: 100%;
+    }
+
+    .room-booking {
+        margin: 20px 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        position: relative;
+        margin: 30px 0px;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    .filter-bar {
+        display: none;
+    }
+
+    .rooms {
+        width: 100%;
+        .room {
+            width: calc(50% - 10px);
+
+            .price {
+                sup {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+
+    .top-filter {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) { 
+    .rooms .room {
+        width: 100%;
+        margin: 5px 0px;
+    }
+
+    .top-filter {
+        margin-left: 0;
+    }
+
+    .social {
+        display: none;
+    }
+}
