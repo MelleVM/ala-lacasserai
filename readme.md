@@ -1,8 +1,9 @@
 ## How to install
 
-- composer install
-- php artisan storage:link
+- run composer install
+- run php artisan storage:link
 - Copy .env.example file to .env and edit database credentials there
-- php artisan key:generate
-- php artisan migrate --seed
-- php artisan serve
+- run php artisan key:generate
+- run php artisan migrate --seed
+- run php artisan serve
+- Open the main URL in the browser and login with default credentials admin@admin.com - password
