@@ -16,14 +16,35 @@
             </div>
         </div>
 
-        {!! Form::open(['method' => 'POST', 'route' => ['admin.bookings.store']]) !!}
+        {!! Form::open(['method' => 'POST', 'id' => 'booking-form', 'route' => ['admin.bookings.store']]) !!}
         <div class="form-group">
             <label>Time From</label>
-            <input value="2012-06-15 14:45" type="text" name="time_from" class="form-control" placeholder="DD-MM-YYYY">
+                            <input type="text" autocomplete="off" name="time_from" class="datetimepicker form-control" placeholder="Select start date">
         </div>
-        <div class="form-group datetimepicker">
+        <div class="form-group">
             <label>Time To</label>
-            <input value="2012-06-15 14:45" type="text" name="time_to" class="form-control" placeholder="DD-MM-YYYY">
+                            <input type="text" autocomplete="off" name="time_to" class="datetimepicker form-control" placeholder="Select end date">
+
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input type="text" name="price" class="form-control" placeholder="Enter price">
+        </div>
+        <div class="form-group">
+            <label>Room Number</label>
+            <input type="text" name="room_number" class="form-control" placeholder="Enter room number">
+        </div>
+            <div class="form-group">
+            {{Form::label('payed', 'Payed')}}
+            {{Form::select('payed', [true => 'True', false => 'False'], false, ['class' => 'browser-default custom-select'])}}
+        </div>
+            <div class="form-group">
+            {{Form::label('state', 'State')}}
+            {{Form::select('state', ['confirmed' => 'Confirmed', 'pending' => 'Pending'], 'pending', ['class' => 'browser-default custom-select'])}}
+        </div>
+        <div class="form-group">
+            <label>Payment Method</label>
+            <input type="text" name="payment_method" class="form-control" placeholder="Enter payment method">
         </div>
                 <div class="form-group">
                     {!! Form::label('room_id', trans('Room ID').'', ['class' => 'control-label']) !!}
