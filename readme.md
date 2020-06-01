@@ -2,6 +2,7 @@
 
 - composer install
 - php artisan storage:link
-- php artisan serve
+- Copy .env.example file to .env and edit database credentials there
 - php artisan key:generate
 - php artisan migrate --seed
+- php artisan serve
