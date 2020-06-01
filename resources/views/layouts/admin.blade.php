@@ -30,6 +30,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
 </head>
 
 <body>
@@ -56,6 +57,28 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
+
+        <script>
+        jQuery('.datetimepicker').datetimepicker({
+            i18n: {
+                de: {
+                    months: [
+                        'Januar', 'Februar', 'März', 'April',
+                        'Mai', 'Juni', 'Juli', 'August',
+                        'September', 'Oktober', 'November', 'Dezember',
+                    ],
+                    dayOfWeek: [
+                        "So.", "Mo", "Di", "Mi",
+                        "Do", "Fr", "Sa", "Su."
+                    ]
+                }
+            },
+            timepicker: true,
+            format: 'Y-m-d H:i'
+        });
+
+    </script>
 </body>
 
 </html>
