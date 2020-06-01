@@ -6,7 +6,6 @@ namespace App;
 // dingen die gebruikt worden 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Booking
@@ -20,7 +19,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Booking extends Model
 {
-    use SoftDeletes;
 
     protected $fillable = ['time_from', 'time_to', 'additional_information', 'user_id', 'room_id', 'room_number', 'price', 'payment_method', 'nights'];
 
