@@ -6,7 +6,7 @@
 {{-- content sectie --}}
 @section('content')
 
-    <div class="container-admin">
+<div class="container-admin">
     <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
@@ -19,23 +19,44 @@
         {!! Form::model($booking, ['method' => 'PUT', 'route' => ['admin.bookings.update', $booking->id]]) !!}
         <div class="form-group">
             <label>Time From</label>
-            <input value="2012-06-15 14:45" type="text" name="time_from" class="form-control" placeholder="DD-MM-YYYY">
+            <input value="{{$booking->time_from}}" autocomplete="off" type="text" name="time_from" class="form-control datetimepicker" placeholder="Select date">
         </div>
-        <div class="form-group datetimepicker">
+        <div class="form-group">
             <label>Time To</label>
-            <input value="2012-06-15 14:45" type="text" name="time_to" class="form-control" placeholder="DD-MM-YYYY">
+            <input value="{{$booking->time_to}}" autocomplete="off" type="text" name="time_to" class="form-control datetimepicker" placeholder="Select date">
         </div>
-                <div class="form-group">
-                    {!! Form::label('room_id', trans('Room ID').'', ['class' => 'control-label']) !!}
-                    {!! Form::select('room_id', $rooms, old('room_id'), ['class' => 'form-control select2']) !!}
-                </div>
-                <div class="form-group">
-                    {!! Form::label('user_id', trans('User ID').'', ['class' => 'control-label']) !!}
-                    {!! Form::select('user_id', $users, old('user_id'), ['class' => 'form-control select2']) !!}
-                </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input value="{{$booking->price}}" type="text" name="price" class="form-control" placeholder="Enter price">
+        </div>
+        <div class="form-group">
+            <label>Room Number</label>
+            <input value="{{$booking->room_number}}" type="text" name="room_number" class="form-control" placeholder="Enter room number">
+        </div>
+        <div class="form-group">
+            {{Form::label('payed', 'Payed')}}
+            {{Form::select('payed', [true => 'True', false => 'False'], $booking->payed, ['class' => 'browser-default custom-select'])}}
+        </div>
+            <div class="form-group">
+            {{Form::label('state', 'State')}}
+            {{Form::select('state', ['confirmed' => 'Confirmed', 'pending' => 'Pending'], $booking->state, ['class' => 'browser-default custom-select'])}}
+        </div>
+        <div class="form-group">
+            <label>Payment Method</label>
+            <input value="{{$booking->payment_method}}" type="text" name="payment_method" class="form-control" placeholder="Enter payment method">
+        </div>
+        <div class="form-group">
+            {!! Form::label('room_id', trans('Room ID').'', ['class' => 'control-label']) !!}
+            {!! Form::select('room_id', $rooms, old('room_id'), ['class' => 'form-control select2']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('user_id', trans('User ID').'', ['class' => 'control-label']) !!}
+            {!! Form::select('user_id', $users, old('user_id'), ['class' => 'form-control select2']) !!}
+        </div>
         <div class="form-group">
             <label>Additional Information</label>
-            <textarea placeholder="Additional Information" name="additional_information" class="w-100 p-2" rows="8">{{$booking->additional_information}}</textarea>
+            <textarea placeholder="Additional Information" name="additional_information" class="w-100 p-2"
+                rows="8">{{$booking->additional_information}}</textarea>
         </div>
         {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
         {!! Form::close() !!}﻿
@@ -43,16 +64,3 @@
 </div>
 @stop
 
-{{-- extra javascript sectie --}}
-@section('javascript')
-    @parent
-    <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-    <script>
-        $('.datetimepicker').datetimepicker({
-            format: "YYYY-MM-DD HH:mm"
-        });
-    </script>
-@stop
