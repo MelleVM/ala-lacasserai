@@ -1,3 +1,5 @@
+#This is a Laravel project
+
 ## How to install
 
 - run <b>composer install</b>
