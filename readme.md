@@ -1,4 +1,4 @@
-### this is a Laravel project
+### This is a Laravel project
 
 ## How to install
 
